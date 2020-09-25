@@ -1,32 +1,91 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="hom">
+      <div id="nav">
+        <ul>
+          <li>
+            <router-link to="reuniao" replace>
+              <img src="./assets/reuniao.png" />
+              <p>Reunião</p>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="votacoes">
+              <img src="./assets/VOTACAO.png" />
+              <p>Votacoes</p>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="resultados">
+              <img src="./assets/graphics.webp" />
+              <p>Resultados</p>
+            </router-link>
+          </li>
+        </ul>
+      </div>
+      <div id="base">
+        <router-view />
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+  name: 'app',
+};
+</script>
+
+<style lang="scss" scoped>
+.hom {
+  width: 100%;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
 #nav {
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  width: 10%;
+  ul {
+    list-style: none;
+    margin-top: 50px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    li > a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+      cursor: pointer;
+      height: 12vh;
+      text-decoration: none;
+      color: #fff;
 
-    &.router-link-exact-active {
-      color: #42b983;
+      img {
+        width: 32px;
+        height: 32px;
+        color: #fff;
+      }
+      p {
+        padding-top: 10px;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
     }
   }
+}
+#base {
+  background-color: #fff;
+  width: 90%;
+  height: 100vh;
+  border-radius: 50px 0 0 50px;
+  padding-top: 50px;
+  padding-left: 50px;
 }
 </style>
