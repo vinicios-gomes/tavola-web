@@ -31,11 +31,19 @@ export default {
   name: 'Resultados',
   data() {
     return {
+      typeTimeout: null,
+      typingTimer: null,
+      doneTypingInterval: 1000,
       votacoes: {},
+      loop: 1,
     };
   },
   mounted() {
     this.listar();
+
+    this.intervalid = setInterval(() => {
+      this.listar();
+    }, 6000);
   },
   methods: {
     listar() {
