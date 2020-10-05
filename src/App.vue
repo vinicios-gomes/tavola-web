@@ -4,10 +4,10 @@
       <div id="nav">
         <ul>
           <li>
-            <router-link to="reuniao" replace>
+            <a href="https://meet.jit.si/20200919admin" target="_blank">
               <img src="./assets/reuniao.png" />
               <p>Reunião</p>
-            </router-link>
+            </a>
           </li>
           <li>
             <router-link to="votacoes">

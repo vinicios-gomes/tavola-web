@@ -1,6 +1,6 @@
 <template>
   <div id="votacoes">
-    <h1>Votacoes</h1>
+    <h1>Votações</h1>
     <div id="content">
       <div class="btState">
         <button>Em andamento</button>

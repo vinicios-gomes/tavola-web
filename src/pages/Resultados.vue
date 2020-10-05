@@ -5,20 +5,20 @@
     </header>
     <div id="container">
       <div class="cardResult">
-        <h2>abstenho-me</h2>
-        <p>{{ votacoes.abstense }}</p>
+        <h2>Abstenho-me</h2>
+        <p>{{ votacoes.abstencoes }}</p>
       </div>
       <div class="cardResult">
-        <h2>aprovar a chapa</h2>
-        <p>{{ votacoes.afavor }}</p>
+        <h2>Aprovar a chapa</h2>
+        <p>{{ votacoes.aprovar }}</p>
       </div>
       <div class="cardResult">
-        <h2>Contra</h2>
-        <p>{{ votacoes.contra }}</p>
+        <h2>Aptos a votar</h2>
+        <p>{{ votacoes.aptos }}</p>
       </div>
       <div class="cardResult">
         <h2>Total de votos</h2>
-        <p>{{ votacoes.totalVotos }}</p>
+        <p>{{ this.somaTotal }}</p>
       </div>
     </div>
   </div>
@@ -31,11 +31,7 @@ export default {
   name: 'Resultados',
   data() {
     return {
-      typeTimeout: null,
-      typingTimer: null,
-      doneTypingInterval: 1000,
       votacoes: {},
-      loop: 1,
     };
   },
   mounted() {
@@ -48,8 +44,15 @@ export default {
   methods: {
     listar() {
       Votacoes.listar().then((response) => {
-        this.votacoes = response.data.votos;
+        this.votacoes = response.data.votacoes;
+        console.log(response);
       });
+    },
+  },
+  computed: {
+    somaTotal() {
+      const totalVotos = this.votacoes.abstencoes + this.votacoes.aprovar + this.votacoes.aptos;
+      return totalVotos;
     },
   },
 };
@@ -64,7 +67,6 @@ export default {
   height: 250px;
   background-color: rgba($color: #cecece, $alpha: 0.5);
   margin: 10px;
-  /* border: 1px solid rgba($color: #000000, $alpha: 0.5); */
 
   h2 {
     width: 100%;
@@ -91,7 +93,6 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 60%;
   justify-content: center;
 }
 </style>

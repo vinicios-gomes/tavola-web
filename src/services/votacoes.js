@@ -4,6 +4,6 @@ import {
 
 export default {
 
-  listar: () => api.get('/socket'),
+  listar: () => api.get('/votacoes'),
 
 };
