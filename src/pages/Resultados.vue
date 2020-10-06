@@ -29,8 +29,7 @@
             <h2>Aptos a votar</h2>
           </span>
         </header>
-        <!--<p>{{ votacoes.aptos }}</p>-->
-        <p>34</p>
+        <p>{{ votacoes.aptos }}</p>
       </div>
       <div class="cardResult">
         <header>
