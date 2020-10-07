@@ -1,9 +1,5 @@
-import {
-  api,
-} from './config';
+import { api } from './config';
 
 export default {
-
   listar: () => api.get('/votacoes'),
-
 };

@@ -983,6 +983,11 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@jeremyhamm/vue-slider@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@jeremyhamm/vue-slider/-/vue-slider-0.2.0.tgz#a1306004733f72e412a690bca80cfc0331656fd2"
+  integrity sha512-a+Zuk1REQcIJJggjggDyT+XlCKH6IT/TVVxYiRh5KQ2iI1/F0m2AUyjbDH35RD1o6DFAmWJzGcMLudqxQSa2hw==
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
