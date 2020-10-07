@@ -37,9 +37,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#app {
+  height: 100vh;
+}
 .hom {
   width: 100%;
   color: #000;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -87,5 +91,17 @@ export default {
   border-radius: 50px 0 0 50px;
   padding-top: 50px;
   padding-left: 50px;
+}
+
+@media (max-width: 1150px) {
+  #nav {
+    p {
+      display: none;
+    }
+  }
+  #base {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 </style>

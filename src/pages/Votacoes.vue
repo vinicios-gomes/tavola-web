@@ -100,7 +100,7 @@ h1 {
   padding-top: 30px;
 }
 .card {
-  width: 55%;
+  width: 890px;
   height: 60px;
   padding: 15px;
   font-size: 20px;
@@ -131,6 +131,18 @@ h1 {
 
     &:hover {
       background-color: rgba(0, 70, 101, 0.9);
+    }
+  }
+}
+@media (max-width: 1150px) {
+  #content {
+    width: 100%;
+  }
+  .card {
+    width: 90%;
+  }
+  @media (max-width: 570px) {
+    .card {
     }
   }
 }
