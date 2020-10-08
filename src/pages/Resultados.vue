@@ -102,7 +102,11 @@ export default {
     flex-wrap: wrap;
   }
   @media (max-width: 1150px) {
-    flex-wrap: wrap;
+    align-items: center;
+    h1 {
+      padding-left: 0;
+      width: 100%;
+    }
   }
 }
 </style>
