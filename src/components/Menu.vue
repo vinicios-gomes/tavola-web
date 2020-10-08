@@ -10,7 +10,7 @@
       <li>
         <router-link to="votacoes">
           <img src="../assets/VOTACAO.png" />
-          <p>Votacoes</p>
+          <p>Votações</p>
         </router-link>
       </li>
       <li>
