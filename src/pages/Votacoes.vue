@@ -2,10 +2,6 @@
   <div id="votacoes">
     <h1>Votações</h1>
     <div id="content">
-      <div class="btState">
-        <button>Em andamento</button>
-        <button>Finalizado</button>
-      </div>
       <div id="ts">
         <card-vot
           v-for="vote in votes"
@@ -65,24 +61,6 @@ h1 {
   border-bottom: 1px solid #000;
   width: 80%;
 }
-.btState {
-  margin-bottom: 60px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  button {
-    width: 150px;
-    height: 30px;
-    border: none;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072);
-  }
-}
 #ts {
   display: flex;
   width: 100%;
@@ -105,9 +83,8 @@ h1 {
   font-size: 20px;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   align-items: center;
   margin: 10px;
   justify-content: space-between;
