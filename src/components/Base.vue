@@ -1,6 +1,6 @@
 <template>
   <div id="base">
-    <h1>Base</h1>
+    <router-view />
   </div>
 </template>
 
@@ -10,4 +10,20 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#base {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 50px 0 0 50px;
+  padding-top: 50px;
+  padding-left: 50px;
+  overflow-y: auto;
+}
+
+@media (max-width: 1150px) {
+  #base {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+</style>

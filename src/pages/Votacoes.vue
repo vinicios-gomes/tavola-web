@@ -54,6 +54,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 h1 {
   padding-bottom: 20px;

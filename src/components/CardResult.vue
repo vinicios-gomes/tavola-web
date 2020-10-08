@@ -36,7 +36,6 @@ export default {
     justify-content: center;
     align-items: center;
     margin-top: 17px;
-    //background-color: rgba($color: #004767, $alpha: 0.7);
     margin-bottom: 40px;
   }
   p {
@@ -46,12 +45,11 @@ export default {
   header {
     display: flex;
     align-items: center;
-    //justify-content: space-between;
     width: 100%;
     margin: 5px;
     img {
-      width: 80px;
-      height: 80px;
+      width: 63px;
+      height: 63px;
       margin-left: 8px;
     }
     span {

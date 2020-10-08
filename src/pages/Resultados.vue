@@ -85,9 +85,9 @@ export default {
 #resultados {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 
   h1 {
     padding-bottom: 20px;
@@ -98,7 +98,11 @@ export default {
   #cards {
     display: flex;
     flex-direction: row;
-    padding-bottom: 105px;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 1150px) {
+    flex-wrap: wrap;
   }
 }
 </style>
