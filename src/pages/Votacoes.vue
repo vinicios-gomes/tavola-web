@@ -7,49 +7,47 @@
         <button>Finalizado</button>
       </div>
       <div id="ts">
-        <div class="card">
-          <div>
-            <img src="../assets/check-list.svg" />
-            <p>Cidades maravilhosas</p>
-          </div>
-          <button type="button">Votar</button>
-        </div>
-        <div class="card">
-          <div>
-            <img src="../assets/check-list.svg" />
-            <p>Cidades maravilhosas</p>
-          </div>
-          <button type="button">Votar</button>
-        </div>
-        <div class="card">
-          <div>
-            <img src="../assets/check-list.svg" />
-            <p>Cidades maravilhosas</p>
-          </div>
-          <button type="button">Votar</button>
-        </div>
-        <div class="card">
-          <div>
-            <img src="../assets/check-list.svg" />
-            <p>Cidades maravilhosas</p>
-          </div>
-          <button type="button">Votar</button>
-        </div>
-        <div class="card">
-          <div>
-            <img src="../assets/check-list.svg" />
-            <p>Cidades maravilhosas</p>
-          </div>
-          <button type="button">Votar</button>
-        </div>
+        <card-vot
+          v-for="vote in votes"
+          v-if="!vote.vote"
+          :key="vote.id"
+          :name="vote.nome"
+          :link="vote.link"
+        >
+        </card-vot>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CardVot from '../components/CardVot.vue';
+import Votacoes from '../services/votacoes';
+
 export default {
   name: 'Votacoes',
+  components: {
+    CardVot,
+  },
+  data() {
+    return {
+      votes: [],
+    };
+  },
+  mounted() {
+    this.listar();
+
+    this.intervalid = setInterval(() => {
+      this.listar();
+    }, 15000);
+  },
+  methods: {
+    listar() {
+      Votacoes.listar().then((response) => {
+        this.votes = response.data.votacoes;
+      });
+    },
+  },
 };
 </script>
 
@@ -80,8 +78,9 @@ h1 {
     border: none;
     margin: 10px;
     border-radius: 5px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-      0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   }
 }
 #ts {
@@ -106,8 +105,9 @@ h1 {
   font-size: 20px;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   align-items: center;
   margin: 10px;
   justify-content: space-between;
